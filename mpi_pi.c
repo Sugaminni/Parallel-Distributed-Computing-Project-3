@@ -51,11 +51,8 @@ int main(int argc, char** argv) {
     if (rank == 0) {
         double pi = step * global_sum;
         double elapsed = end_time - start_time;
-        printf("=====================================\n");
-        printf("Approximated PI = %.15f\n", pi);
-        printf("Steps = %lld, Processes = %d\n", num_steps, size);
-        printf("Elapsed time = %.6f seconds\n", elapsed);
-        printf("=====================================\n");
+        printf("PI is %.15f\n", pi);
+        printf("Elapsed time = %.0f nanoseconds\n", elapsed * 1e9);
     }
 
     MPI_Finalize();
